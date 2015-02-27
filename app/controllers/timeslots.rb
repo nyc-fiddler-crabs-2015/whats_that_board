@@ -1,4 +1,4 @@
 get '/timeslots' do
-  erb :'timeslots/all'
+  erb :'timeslots/index'
 end
 
