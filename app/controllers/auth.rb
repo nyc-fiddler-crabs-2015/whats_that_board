@@ -1,5 +1,4 @@
 #replace all redirects to "/user/#{session[:user_id]}" to "/timeslots"
-
 get '/' do
   if session[:user_id]
     redirect "/user/#{session[:user_id]}"
@@ -34,7 +33,8 @@ post '/logout' do
   redirect '/'
 end
 
-get '/user/:user_id' do
+get '/users/:user_id' do
   @user = User.find(params[:user_id])
   erb :"/auth/userpage"
 end
+
