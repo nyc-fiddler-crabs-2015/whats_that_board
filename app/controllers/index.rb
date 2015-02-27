@@ -2,7 +2,7 @@ get '/login' do
   if session[:user_id]
     redirect "/user/#{session[:user_id]}"
   else
-    erb :login
+    erb :'auth/login'
   end
 end
 
@@ -18,7 +18,7 @@ post '/signin' do
 end
 
 get '/signup' do
-  erb :signup
+  erb :auth/signup
 end
 
 post '/signup' do
