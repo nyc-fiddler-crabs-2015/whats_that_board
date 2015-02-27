@@ -1,8 +1,10 @@
-get '/login' do
+#replace all redirects to "/user/#{session[:user_id]}" to "/timeslots"
+
+get '/' do
   if session[:user_id]
     redirect "/user/#{session[:user_id]}"
   else
-    erb :login
+    erb :"/auth/login"
   end
 end
 
@@ -13,12 +15,12 @@ post '/signin' do
     redirect "/user/#{user.id}"
   else
     session[:message] = "Invalid username and/or password"
-    redirect '/login'
+    redirect '/'
   end
 end
 
 get '/signup' do
-  erb :signup
+  erb :"/auth/signup"
 end
 
 post '/signup' do
@@ -29,10 +31,10 @@ end
 
 post '/logout' do
   session.delete(:user_id)
-  redirect '/login'
+  redirect '/'
 end
 
 get '/user/:user_id' do
   @user = User.find(params[:user_id])
-  erb :userpage
+  erb :"/auth/userpage"
 end
