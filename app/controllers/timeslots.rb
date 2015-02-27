@@ -3,7 +3,8 @@ get '/timeslots' do
 end
 
 get '/timeslots/new' do
-  erb :
+  @topics = Topic.all
+  erb :'timeslots/new'
 end
 
 post '/timeslots/new' do
