@@ -45,3 +45,9 @@ a {
 #linebreak {
   border-color: #E1E9FC;
 }
+
+.header {
+  font-weight: bold;
+  padding: 35px;
+  font-size: 20px;
+}
