@@ -1,16 +1,16 @@
 <div class="container">
    <div class="header"> Create a Session: </div>
   <form action="/timeslots/new" method="post">
-   <select value="time">
+   <select name="time">
     <% ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"].each do |time| %>
-      <option id="<%= time %>"><%= time %></option>
+      <option value="<%= time %>"><%= time %></option>
     <% end %>
 
   </select>
-  <input type="hidden" name="student_id" value="<% session[:user_id] %>">
-  <select value="topic_id">
+  
+  <select name="topic_id">
     <% @topics.each do |topic| %>
-    <option id="<%= topic.title %>"><%= topic.title %></option>
+    <option value="<%= topic.id %>"><%= topic.title %></option>
 
     <% end %>
   </select>
