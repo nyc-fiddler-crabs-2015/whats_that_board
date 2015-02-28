@@ -1,7 +1,7 @@
-user1 = User.create(name: "Daniel", password: "123", phase: "2")
-user2 = User.create(name: "Justin", password: "123", phase: "2")
-user3 = User.create(name: "Leo", password: "123", phase: "2")
-user4 = User.create(name: "Chris", password: "123", phase: "2")
+user1 = User.create(name: "daniel", password: "123", phase: "2")
+user2 = User.create(name: "justin", password: "123", phase: "2")
+user3 = User.create(name: "leo", password: "123", phase: "2")
+user4 = User.create(name: "chris", password: "123", phase: "2")
 
 
 topic1 = Topic.create(category: "Phase 1 / Week 1" , title: "Algorithms")
