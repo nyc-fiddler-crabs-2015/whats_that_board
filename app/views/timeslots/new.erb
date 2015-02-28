@@ -2,7 +2,7 @@
    <div class="header"> Create a Session: </div>
   <form action="/timeslots/new" method="post">
    <select name="time">
-    <% ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"].each do |time| %>
+    <% timeslots_array.each do |time| %>
       <option value="<%= time %>"><%= time %></option>
     <% end %>
 
