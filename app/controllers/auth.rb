@@ -11,7 +11,8 @@ post '/signin' do
   user = User.find_by(name: params[:name])
   if user && user.authenticate(params[:password])
     session[:user_id] =user.id
-    redirect "/user/#{user.id}"
+    redirect "/users
+    /#{user.id}"
   else
     session[:message] = "Invalid username and/or password"
     redirect '/'
@@ -34,6 +35,9 @@ post '/logout' do
 end
 
 get '/users/:user_id' do
+
+
+  @queries = ["Open Timeslots (Mine)", "Open Timeslots (Others)", "Booked Timeslots (me teacher)", "Booked Timeslots (me student)", "All DBC Times for Requests", "All DBC Times for Requests"]
   @user = User.find(params[:user_id])
   erb :"/auth/userpage"
 end
