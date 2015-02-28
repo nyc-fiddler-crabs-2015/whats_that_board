@@ -8,6 +8,8 @@ get '/timeslots/new' do
 end
 
 post '/timeslots/new' do
+	puts "/n/n/n/n/n"
+	p params
   @timeslot = Timeslot.create(params)
 end
 
