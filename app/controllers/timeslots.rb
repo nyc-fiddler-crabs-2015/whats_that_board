@@ -9,6 +9,7 @@ end
 
 post '/timeslots/new' do
 	puts "/n/n/n/n/n"
+	params[:tutor_id] = session[:user_id]
 	p params
   @timeslot = Timeslot.create(params)
 end
