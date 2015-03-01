@@ -16,7 +16,7 @@ end
 
 
 def other_open
-	@timeslots = Timeslot.where.not(tutor_id: nil).where(student_id: nil)
+	@timeslots = Timeslot.where.not(tutor_id: nil).where(student_id: nil).where.not(tutor_id: current_user.id)
 	return @timeslots
 end
 
@@ -31,5 +31,14 @@ def boooked_me_student
 end
 
 def check_status(time)
-	
+	@timeslot = Timeslot.find_by(student_id: current_user.id, time: time)
+	@timeslot2 = Timeslot.find_by(student_id: current_user.id, time: time)
+	if (@timeslot.class == Timeslot)
+		return @timeslot
+	else
+		return false
+	end
+
+
+	 
 end
