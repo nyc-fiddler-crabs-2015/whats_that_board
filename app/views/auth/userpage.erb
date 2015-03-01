@@ -1,9 +1,45 @@
 <div class="container">
 
-  <h2 class = "intro">Welcome <%= @user.name %>!</h2>
+	<h2 class = "intro">Welcome <%= @user.name %>!</h2>
 
-  <form action="/logout" method="post">
-    <input type="submit" value="Logout" class="btn">
-  </form>
+	<form action="/logout" method="post">
+		<input type="submit" value="Logout" class="btn">
+	</form>
+
+	Dashboard Prototype - Useful Searches
+	<h3>Open Timeslots (Mine)</h3>
+	<ul>
+		<% my_open.each do |timeslot| %>
+		<li>
+		<%= timeslot.time %> | <%= timeslot.tutor.name %>
+		</li>
+		<% end %>
+	</ul>
+	<h3>Open Timeslots (Others)</h3>
+	<ul>
+		<% other_open.each do |timeslot| %>
+		<li><%= timeslot.time %> | <%= timeslot.tutor.name %></li>
+		<% end %>
+	</ul>
+	<h3>Booked Timeslots (me teacher)</h3>
+	<ul>
+		<% boooked_me_teach.each do |timeslot| %>
+		<li><%= timeslot.time %> | <%= timeslot.student.name %> | <%= timeslot.tutor.name %></li>
+		<% end %>
+	</ul>
+	<h3>Booked Timeslots (me student)</h3>
+	<ul>
+		<% boooked_me_student.each do |timeslot| %>
+			<li><%= timeslot.time %> | <%= timeslot.student.name %> | <%= timeslot.tutor.name %></li>
+		<% end %>
+	</ul>
+
+	<h3>All DBC Times for Requests</h3>
+	<ul>
+		<% timeslots_array.each do |timeslot| %>
+		<li><%= "#{check_status(timeslot).class} #{timeslot}" %></li>
+		<% end %>
+	</ul>
+
 
 </div>
