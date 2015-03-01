@@ -35,8 +35,6 @@ end
 
 get '/users/:user_id' do
 
-
-  @queries = ["Open Timeslots (Mine)", "Open Timeslots (Others)", "Booked Timeslots (me teacher)", "Booked Timeslots (me student)", "All DBC Times for Requests", "All DBC Times for Requests"]
   @user = User.find(params[:user_id])
   erb :"/auth/userpage"
 end

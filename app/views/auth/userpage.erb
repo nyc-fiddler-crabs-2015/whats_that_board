@@ -11,14 +11,14 @@
 	<ul>
 		<% my_open.each do |timeslot| %>
 		<li>
-		<%= timeslot.time %> | <%= timeslot.student %> | <%= timeslot.tutor.name %>
+		<%= timeslot.time %> | <%= timeslot.tutor.name %>
 		</li>
 		<% end %>
 	</ul>
 	<h3>Open Timeslots (Others)</h3>
 	<ul>
 		<% other_open.each do |timeslot| %>
-		<li><%= timeslot.time %> | <%= timeslot.student %> | <%= timeslot.tutor.name %></li>
+		<li><%= timeslot.time %> | <%= timeslot.tutor.name %></li>
 		<% end %>
 	</ul>
 	<h3>Booked Timeslots (me teacher)</h3>
@@ -37,7 +37,7 @@
 	<h3>All DBC Times for Requests</h3>
 	<ul>
 		<% timeslots_array.each do |timeslot| %>
-		<li><%= timeslot %></li>
+		<li><%= "#{check_status(timeslot).class} #{timeslot}" %></li>
 		<% end %>
 	</ul>
 
