@@ -1,7 +1,8 @@
 <div class="container">
  <div class="header"> Create a Session: </div>
  <div>Time: <%= @time %></div>
- <form action="/timeslots/be_student" method="post">
+ <% if @timeslots.count > 0 %>
+   <form action="/timeslots/be_student" method="post">
   <input type="hidden" name="_method" value="put" />
   <select name="topic_id">
     <% @topics.each do |topic| %>
@@ -18,5 +19,9 @@
   </select>
   <input type="submit" value="Add Student" class="btn"/>
 </form>
+<% else %>
+  <div>Sorry No avaiable tutors for this timeslot</div>
+ <% end %>
+ 
 </div>
 

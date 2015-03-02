@@ -7,6 +7,6 @@ describe Timeslot do
     expect(timeslot).to_not be nil
 
   it 'should have a time'
-    expect(timeslot.time).to be "!0 AM"
+    expect(timeslot.time).to be "10 AM"
   end
 end

@@ -67,18 +67,11 @@ namespace :db do
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')
   end
-
+  
   namespace :test do
     desc "Migrate test database"
     task :prepare do
       system "rake db:migrate RACK_ENV=test"
     end
   end
-end
-
-task :default  => :spec
-
-desc "Run the specs."
-RSpec::Core::RakeTask.new do |t|
-    t.pattern = "spec/**/*_spec.rb"
 end
