@@ -5,6 +5,15 @@ body {
 }
 
 .container {
+  margin: auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: none;
+  text-align: center;
+}
+
+
+.middle {
   margin: 200px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
@@ -51,3 +60,5 @@ a {
   padding: 35px;
   font-size: 20px;
 }
+
+form {display: inline-block;}

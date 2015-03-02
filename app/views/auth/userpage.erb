@@ -1,9 +1,58 @@
 <div class="container">
 
-  <h2 class = "intro">Welcome <%= @user.name %>!</h2>
+	<h2 class = "intro">Welcome <%= @user.name %>!</h2>
 
-  <form action="/logout" method="post">
-    <input type="submit" value="Logout" class="btn">
-  </form>
+	<form action="/logout" method="post">
+		<input type="submit" value="Logout" class="btn">
+	</form>
 
+	Dashboard Prototype - Useful Searches
+	<h3>My Schedule</h3>
+	<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Times</th>
+        <th>Status</th>
+        <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        	<% timeslots_array.each do |timeslot| %>
+		
+        	<tr>
+        		<td><%= "#{timeslot}"%></td>
+        		<td><%= "#{status = check_status(timeslot,@user.id)}"%></td>
+        		<td><%= place_buttons(timeslot,@user.id) %></td>
+        	</tr>
+        	<% end %>
+        </tbody>
+        </table>
+
+	<h3>Open Timeslots (Mine)</h3>
+	
+		<% my_open.each do |timeslot| %>
+		<div>
+		<%= timeslot.time %> | <%= timeslot.tutor.name %>
+		</div>
+		<% end %>
+	
+	<h3>Open Timeslots (Others)</h3>
+	
+		<% other_open.each do |timeslot| %>
+		<div><%= timeslot.time %> | <%= timeslot.tutor.name %></div>
+		<% end %>
+	
+	<h3>Booked Timeslots (me teacher)</h3>
+	
+		<% boooked_me_teach.each do |timeslot| %>
+		<div><%= timeslot.time %> | <%= timeslot.student.name %> | <%= timeslot.tutor.name %></div>
+		<% end %>
+	
+	<h3>Booked Timeslots (me student)</h3>
+	
+		<% boooked_me_student.each do |timeslot| %>
+			<div><%= timeslot.time %> | <%= timeslot.student.name %> | <%= timeslot.tutor.name %></div>
+		<% end %>
+	
 </div>
