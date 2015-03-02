@@ -14,8 +14,15 @@ gem 'shotgun'
 gem 'bcrypt'
 
 group :test do
-  gem 'rspec'
+  gem 'shoulda-matchers'
   gem 'rack-test'
+  gem 'rspec'
+  gem 'capybara'
+end
+
+group :test, :development do
+  gem 'factory_girl'
+  gem 'faker'
 end
 
 
