@@ -1,3 +1,3 @@
 class Topic < ActiveRecord::Base
-	belongs_to :timeslot
+	has_one :timeslot
 end

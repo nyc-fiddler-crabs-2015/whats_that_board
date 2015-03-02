@@ -1,113 +1,31 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<div class="container">
 
-<h3 class="sub-header">Hey, What's That Board Over There?</h3>
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Tutors</th>
-<!--         <% ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"].each do |time| %>
-        <th><%=time%></th>
-          <%end%> -->
-   <th>10 AM</th>
-        <th>11 AM</th>
-        <th>12 PM</th>
-        <th>1 PM</th>
-        <th>2 PM</th>
-        <th>3 PM</th>
-        <th>4 PM</th>
-        <th>5 PM</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Name</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>amet</td>
-        <td>consectetur</td>
-        <td>adipiscing</td>
-        <td>elit</td>
-        <td>bokd</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>Integer</td>
-        <td>nec</td>
-        <td>odio</td>
-        <td>Praesent</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>libero</td>
-        <td>Sed</td>
-        <td>cursus</td>
-        <td>ante</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>dapibus</td>
-        <td>diam</td>
-        <td>Sed</td>
-        <td>nisi</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>Nulla</td>
-        <td>quis</td>
-        <td>sem</td>
-        <td>at</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>nibh</td>
-        <td>elementum</td>
-        <td>imperdiet</td>
-        <td>Duis</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>sagittis</td>
-        <td>ipsum</td>
-        <td>Praesent</td>
-        <td>mauris</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-    </tbody>
-  </table>
+  <h3 class="sub-header">Hey, What's That Board Over There?</h3>
+
+  <div align="left">
+    <% ["Tutors", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"].each do |title| %>
+      <%= title %>
+    <% end %>
+  </div>
+
+  <% @tutors.each do |tutor| %>
+    <div align="left">
+      <ul class="table">
+        <li class="table_row"><a href="/<%= tutor.id %>/feedback"><%= tutor.name %></a></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "10 AM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "11 AM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "12 PM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "1 PM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "2 PM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "3 PM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "4 PM", tutor: tutor).student.name %></li>
+        <li class="table_row"><%= Timeslot.find_by(time: "5 PM", tutor: tutor).student.name %></li>
+      </ul>
+    </div>
+  <% end %>
+
+  <form action="/logout" method="post">
+    <input type="submit" value="Logout" class="btn">
+  </form>
+
 </div>

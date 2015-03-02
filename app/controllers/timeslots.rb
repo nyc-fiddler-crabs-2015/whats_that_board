@@ -1,4 +1,7 @@
 get '/timeslots' do
+  @tutor_ids = Timeslot.all.map {|x| x.tutor.id}.uniq
+  @tutors = @tutor_ids.map {|id| User.find(id)}
+
   erb :'timeslots/index'
 end
 
