@@ -1,13 +1,17 @@
-def timeslots_array
-	array = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
-	return array
-end
-
 def current_user
 	@user = User.find(session[:user_id])
 	return @user
 end
 
+
+def timeslots_array
+	array = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
+	return array
+end
+
+# Model Methods 
+# ALLLLLLLL OFFFFFF THEEESSSEESSSSS 
+#
 
 def my_open
 	@timeslots = Timeslot.where(tutor_id: current_user.id).where(student_id: nil)
@@ -61,6 +65,8 @@ def place_buttons(time,user_id)
 	end
 end
 
+
+#THIS SHOULD ALL BE PARTIALS
 def cancel_button_as_tutor(timeslot)
 	return   <<-HTML
   <form action="/timeslots/#{timeslot.id}" method="post">
