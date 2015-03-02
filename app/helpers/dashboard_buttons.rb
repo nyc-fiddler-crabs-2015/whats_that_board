@@ -47,3 +47,13 @@ def be_tutor(timeslot)
   HTML
 	
 end
+
+def be_tutor(timeslot)
+  return   <<-HTML
+  <form action="/timeslots/new" method="post">
+     <input type="hidden" name="time" value="#{timeslot}">
+  <input type="submit" value="Be Tutor" class="btn"/>
+</form>
+  HTML
+  
+end

@@ -1,13 +1,14 @@
 <div class="container">
-
   <div class="header"><%= @tutor.name %>'s Feedback </div>
-
-  <% @feedback.each do |feedback| %>
+	<% if @feedback.count > 0 %>
+		
+	
+  <% @feedback.each_with_index do |feedback, i| %>
     <div class = "feedback_post">
-      <p><%= feedback.content %></p>
+      <p><%= i+1 %>) <%= feedback.content %></p>
     </div>
   <% end %>
-
-  <p>Want to add a review for <%= @tutor.name %>? Click <a href="/<%= @tutor.id%>/feedback/new">here</a></p>
+<% end %>
+  <p>Want to add a review for <%= @tutor.name %>? Click <a href="/users/<%= @tutor.id%>/feedback/new">here</a></p>
 
 </div>

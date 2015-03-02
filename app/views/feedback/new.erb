@@ -2,7 +2,7 @@
 
   <div class="header"><%= @tutor.name %>'s Feedback Form</div>
 
-  <form action="/<%= @tutor.name%>/feedback/new" method="post">
+  <form action="/users/<%= @tutor.id%>/feedback/new" method="post">
     <textarea rows="4" cols="70" name="content" placeholder="Begin typing feedback..."></textarea>
     <br><br>
     <input type="submit" value="Submit" class="btn" />

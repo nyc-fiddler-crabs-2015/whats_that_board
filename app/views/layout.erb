@@ -27,6 +27,10 @@
 	<title><%= @title || "What's that Board?" %></title>
 </head>
 <body>
+<header>
+	<div id="leftnav"><a href="/"><%= @title || "What's that Board?" %></a></div>
+	<div id="rightnav"><a href="/login">Login</a></div>
+</header>
 	<%= yield %>
 </body>
 </html>

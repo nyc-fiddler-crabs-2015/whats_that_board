@@ -1,16 +1,16 @@
-get '/:id/feedback' do
+get '/users/:id/feedback' do
   @tutor = User.find(params[:id])
-  @feedback = @tutor.feedback
-  erb "/feedback/index"
+  @feedback = Feedback.where(user_id: params[:id])
+  erb :'feedback/index'
 end
 
-get '/:id/feedback/new' do
+get '/users/:id/feedback/new' do
   @tutor = User.find(params[:id])
-  erb "/feedback/new"
+  erb :'feedback/new'
 end
 
-post '/:id/feedback/new' do
+post '/users/:id/feedback/new' do
   @tutor = User.find(params[:id])
-  Feedback.create(content: params[:content], user: @tutor)
-  erb "/#{@tutor.id}/feedback"
+  Feedback.create(content: params[:content], user_id: @tutor.id)
+  redirect "/users/#{@tutor.id}/feedback"
 end
