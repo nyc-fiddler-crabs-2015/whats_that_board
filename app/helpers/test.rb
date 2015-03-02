@@ -43,7 +43,7 @@ def check_status(time,user_id)
 	else
 		return "Free"
 	end
-	 
+
 end
 
 def place_buttons(time,user_id)
@@ -68,7 +68,7 @@ def cancel_button_as_tutor(timeslot)
   <input type="submit" value="Cancel Session" class="btn"/>
 </form>
   HTML
-	
+
 end
 
 def cancel_button_as_student(timeslot)
@@ -78,7 +78,7 @@ def cancel_button_as_student(timeslot)
   <input type="submit" value="Remove Student" class="btn"/>
 </form>
   HTML
-	
+
 end
 
 def add_student(timeslot)
@@ -88,7 +88,7 @@ def add_student(timeslot)
   <input type="submit" value="Add Student" class="btn"/>
 </form>
   HTML
-	
+
 end
 
 def pick_tutor(timeslot)
@@ -98,7 +98,7 @@ def pick_tutor(timeslot)
   <input type="submit" value="Pick Tutor" class="btn"/>
 </form>
   HTML
-	
+
 end
 
 def be_tutor(timeslot)
@@ -108,5 +108,5 @@ def be_tutor(timeslot)
   <input type="submit" value="Be Tutor" class="btn"/>
 </form>
   HTML
-	
+
 end
