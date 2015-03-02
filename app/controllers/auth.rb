@@ -24,6 +24,8 @@ end
 
 post '/signup' do
   user = User.create(name: params[:name], password: params[:password])
+
+  #What if the users is not created 
   session[:user_id] = user.id
   redirect "users/#{user.id}"
 end

@@ -1,9 +1,12 @@
+#Fix YOUR TESTS
+
 require_relative '../spec_helper'
 
 class FeedbackSpec
   describe 'feedback' do
     let(:feedback) { Feedback.create(content: "I've got a lovely bunch of coconuts", user_id: 1)}
-
+    
+   #Only need this if we don't ever call the sym :feedback and expecting the data to be in the db 
     before do
       feedback
     end

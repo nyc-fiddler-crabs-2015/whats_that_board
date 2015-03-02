@@ -8,6 +8,8 @@ get '/timeslots/new' do
 end
 
 post '/timeslots/new' do
+
+  # NO DEBUG FUNNNNNN
 	puts "/n/n/n/n/n"
 	params[:tutor_id] = session[:user_id]
 	p params
@@ -33,6 +35,7 @@ get '/timeslots/be_student' do
 end
 
 put '/timeslots/be_student' do
+  # NO DEBUG FUN
 	puts "\n\n\n\n"
 	p params
 	@timeslot = Timeslot.update(params[:id], :topic_id => params[:topic_id], :student_id => current_user.id)

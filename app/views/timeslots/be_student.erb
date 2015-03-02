@@ -5,15 +5,13 @@
   <input type="hidden" name="_method" value="put" />
   <select name="topic_id">
     <% @topics.each do |topic| %>
-    <option value="<%= topic.id %>"><%= topic.title %></option>
-
+      <option value="<%= topic.id %>"><%= topic.title %></option>
     <% end %>
   </select>
 
   <select name="id">
     <% @timeslots.each do |timeslot| %>
-    <option value="<%= timeslot.id %>"><%= timeslot.tutor.name  %></option>
-
+      <option value="<%= timeslot.id %>"><%= timeslot.tutor.name  %></option>
     <% end %>
   </select>
   <input type="submit" value="Add Student" class="btn"/>

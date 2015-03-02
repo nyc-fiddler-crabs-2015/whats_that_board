@@ -1,3 +1,5 @@
+#This File is not very Dry
+
 user1 = User.create(name: "daniel", password: "123", phase: "2")
 user2 = User.create(name: "justin", password: "123", phase: "2")
 user3 = User.create(name: "leo", password: "123", phase: "2")
